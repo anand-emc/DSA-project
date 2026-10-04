@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Structure Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">DS</span><div><h1>Data Structure Visualizer</h1><p>Interactive Mini Project</p></div></div>
+  <button id="themeBtn" class="icon-btn" title="Toggle theme">☀️</button>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <span class="badge">B.Tech • Data Structures</span>
+      <h2>Learn Data Structures <span>Visually</span></h2>
+      <p>Explore common data structures and algorithms through interactive operations and step-by-step visualizations.</p>
+    </div>
+    <div class="hero-card"><div class="pulse">DS</div><strong>Interactive Learning</strong><small>Build • Visualize • Understand</small></div>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" data-section="stack">Stack</button>
+    <button class="tab" data-section="queue">Queue</button>
+    <button class="tab" data-section="linked">Linked List</button>
+    <button class="tab" data-section="bst">BST</button>
+    <button class="tab" data-section="algorithms">Algorithms</button>
+  </nav>
+
+  <section id="stack" class="panel active">
+    <div class="panel-head"><div><h3>Stack</h3><p>LIFO — Last In, First Out</p></div><span class="complexity">Push O(1) • Pop O(1)</span></div>
+    <div class="controls"><input id="stackInput" type="text" placeholder="Enter a value"><button onclick="stackPush()">Push</button><button class="secondary" onclick="stackPop()">Pop</button><button class="ghost" onclick="stackClear()">Clear</button></div>
+    <div id="stackView" class="structure stack-view"></div>
+    <div class="info-grid"><div><b>Top</b><span id="stackTop">—</span></div><div><b>Size</b><span id="stackSize">0</span></div></div>
+  </section>
+
+  <section id="queue" class="panel">
+    <div class="panel-head"><div><h3>Queue</h3><p>FIFO — First In, First Out</p></div><span class="complexity">Enqueue O(1) • Dequeue O(1)</span></div>
+    <div class="controls"><input id="queueInput" type="text" placeholder="Enter a value"><button onclick="enqueue()">Enqueue</button><button class="secondary" onclick="dequeue()">Dequeue</button><button class="ghost" onclick="queueClear()">Clear</button></div>
+    <div id="queueView" class="structure queue-view"></div>
+    <div class="info-grid"><div><b>Front</b><span id="queueFront">—</span></div><div><b>Rear</b><span id="queueRear">—</span></div><div><b>Size</b><span id="queueSize">0</span></div></div>
+  </section>
+
+  <section id="linked" class="panel">
+    <div class="panel-head"><div><h3>Singly Linked List</h3><p>Nodes connected through pointers</p></div><span class="complexity">Insert at head O(1)</span></div>
+    <div class="controls"><input id="listInput" type="text" placeholder="Enter a value"><button onclick="listInsert()">Insert</button><button class="secondary" onclick="listDelete()">Delete Head</button><button class="ghost" onclick="listClear()">Clear</button></div>
+    <div id="listView" class="structure linked-view"></div>
+  </section>
+
+  <section id="bst" class="panel">
+    <div class="panel-head"><div><h3>Binary Search Tree</h3><p>Left &lt; Root &lt; Right</p></div><span class="complexity">Search • Insert O(log n) average</span></div>
+    <div class="controls"><input id="bstInput" type="number" placeholder="Enter number"><button onclick="bstInsert()">Insert</button><button class="secondary" onclick="bstSearch()">Search</button><button class="ghost" onclick="bstClear()">Clear</button></div>
+    <div id="bstMessage" class="message">Insert values to build your tree.</div>
+    <div id="bstView" class="tree"></div>
+  </section>
+
+  <section id="algorithms" class="panel">
+    <div class="panel-head"><div><h3>Algorithms Lab</h3><p>Searching and sorting visualizations</p></div><span class="complexity">Interactive</span></div>
+    <div class="controls wrap">
+      <button onclick="generateArray()">Generate Array</button>
+      <select id="algoSelect"><option value="bubble">Bubble Sort</option><option value="selection">Selection Sort</option><option value="insertion">Insertion Sort</option><option value="linear">Linear Search</option><option value="binary">Binary Search</option></select>
+      <input id="searchInput" type="number" placeholder="Search value">
+      <button onclick="runAlgorithm()">Run</button>
+      <button class="ghost" onclick="resetArray()">Reset</button>
+    </div>
+    <div id="arrayView" class="array-view"></div>
+    <div id="algoMessage" class="message">Generate an array, choose an algorithm, and press Run.</div>
+  </section>
+
+  <section class="about">
+    <h3>Mini Project Overview</h3>
+    <div class="cards">
+      <article><span>01</span><h4>Objective</h4><p>Understand data structures by observing their operations instead of only reading theory.</p></article>
+      <article><span>02</span><h4>Technologies</h4><p>HTML5, CSS3 and vanilla JavaScript. No external libraries are required.</p></article>
+      <article><span>03</span><h4>Learning</h4><p>Practice LIFO, FIFO, linked nodes, tree ordering, searching and sorting concepts.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer>Data Structure Visualizer • Mini Project</footer>
+<script src="script.js"></script>
+</body>
+</html>
